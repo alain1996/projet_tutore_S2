@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Equiper/déséquiper" version="3">
+  <DEPS>
+    <ID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+    <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+    <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+    <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+    <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+    <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+    <PID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Equiper/déséquiper]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Note" uid="37bbba5e-79aa-4250-8d02-6d56860be8cd"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="b41759c0-1028-4c13-b7a5-e476c4cd2eeb"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="e18d99db-6c6d-4bb4-974b-f89b4094b3e1"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="bc1a9447-6061-480a-9e0b-79068a9ea09d"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="c20346a7-af77-4a4e-b0bd-389f2dd323c8"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="56e29eb2-d4ef-40df-8ba7-6cf8f09c0848"/>
+          <PID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

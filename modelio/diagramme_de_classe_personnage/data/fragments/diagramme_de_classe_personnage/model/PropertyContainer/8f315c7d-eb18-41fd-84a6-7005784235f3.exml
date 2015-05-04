@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramme_de_classe_personnage" version="3">
+  <DEPS>
+    <ID name="diagramme_de_classe_personnage" mc="PropertyContainer" uid="8f315c7d-eb18-41fd-84a6-7005784235f3"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="diagramme_de_classe_personnage" mc="PropertyContainer" uid="8f315c7d-eb18-41fd-84a6-7005784235f3"/>
+    <PID name="diagramme_de_classe_personnage" mc="AnalystProject" uid="d6090c1c-a670-4bfc-81c5-4e5a8686a822"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[diagramme_de_classe_personnage]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

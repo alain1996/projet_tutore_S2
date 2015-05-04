@@ -1,0 +1,180 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Envoyer Message" version="3">
+  <DEPS>
+    <ID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+    <EXTID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+    <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+    <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+    <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+    <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+    <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+    <PID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Envoyer Message]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedEnd">
+        <OBJECT>
+          <ID name="" mc="AssociationEnd" uid="efbc57e4-4277-4140-81ad-15e593c7a8b3"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Aggregation">KindIsAssociation</ATT>
+            <ATT name="IsChangeable">true</ATT>
+            <ATT name="Changeable">ReadWrite</ATT>
+            <ATT name="IsDerived">false</ATT>
+            <ATT name="IsOrdered">false</ATT>
+            <ATT name="IsUnique">false</ATT>
+            <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+            <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+            <ATT name="Visibility">Public</ATT>
+            <ATT name="IsClass">false</ATT>
+            <ATT name="IsAbstract">false</ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+            </LINK>
+            <COMP relation="Opposite">
+              <OBJECT>
+                <ID name="" mc="AssociationEnd" uid="42569dc6-2236-4b9c-8da1-37154302c8b2"/>
+                <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+                <ATTRIBUTES>
+                  <ATT name="Aggregation">KindIsAssociation</ATT>
+                  <ATT name="IsChangeable">true</ATT>
+                  <ATT name="Changeable">ReadWrite</ATT>
+                  <ATT name="IsDerived">false</ATT>
+                  <ATT name="IsOrdered">false</ATT>
+                  <ATT name="IsUnique">false</ATT>
+                  <ATT name="MultiplicityMin"><![CDATA[0]]></ATT>
+                  <ATT name="MultiplicityMax"><![CDATA[1]]></ATT>
+                  <ATT name="Visibility">Public</ATT>
+                  <ATT name="IsClass">false</ATT>
+                  <ATT name="IsAbstract">false</ATT>
+                  <ATT name="Name"></ATT>
+                  <ATT name="status">1970354901745664</ATT>
+                </ATTRIBUTES>
+                <DEPENDENCIES>
+                  <COMP relation="Opposite">
+                    <COMPID name="" mc="AssociationEnd" uid="efbc57e4-4277-4140-81ad-15e593c7a8b3"/>
+                  </COMP>
+                  <COMP relation="Association">
+                    <OBJECT>
+                      <ID name="" mc="Association" uid="3f07782e-36e4-40e8-8433-e580f8b76f73"/>
+                      <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+                      <ATTRIBUTES>
+                        <ATT name="Name"></ATT>
+                        <ATT name="status">1970354901745664</ATT>
+                      </ATTRIBUTES>
+                      <DEPENDENCIES></DEPENDENCIES>
+                    </OBJECT>
+                  </COMP>
+                </DEPENDENCIES>
+              </OBJECT>
+            </COMP>
+            <COMP relation="Association">
+              <COMPID name="" mc="Association" uid="3f07782e-36e4-40e8-8433-e580f8b76f73"/>
+            </COMP>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Note" uid="54657c22-7a2b-4d44-88aa-2cf5e55ca22a"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="654eec98-7f23-4e37-940f-19918cbe5582"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="a161f7ad-3853-4db6-9092-81611a7d65e4"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="a864da3b-d024-4caf-8537-e7691c3022c0"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="2ad01092-8850-4027-8111-8ba9c2f5b4d1"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="8ae857e2-8441-4a39-bea9-2ca138d0e2fd"/>
+          <PID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

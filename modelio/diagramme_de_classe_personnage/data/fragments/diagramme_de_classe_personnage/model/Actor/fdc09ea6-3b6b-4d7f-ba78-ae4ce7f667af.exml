@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Serveur" version="3">
+  <DEPS>
+    <ID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+    <FOREIGNID name="secondary" mc="Stereotype" uid="01ec1ac4-0000-2f04-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+    <PID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Serveur]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <LINK relation="Extension">
+        <FOREIGNID name="secondary" mc="Stereotype" uid="01ec1ac4-0000-2f04-0000-000000000000"/>
+      </LINK>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

@@ -1,0 +1,57 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramme_de_classe_personnage" version="3">
+  <DEPS>
+    <ID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <COMPID name="Attaquer" mc="UseCase" uid="fe52eca7-f310-4f0e-84b9-a9d2dde8e00f"/>
+    <COMPID name="Choisir une potion" mc="UseCase" uid="55515e98-94f5-4356-a0f8-0df204681169"/>
+    <COMPID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+    <COMPID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+    <COMPID name="Créer personnage" mc="UseCase" uid="9a8a5f34-9eb6-470d-b019-82100d8ee725"/>
+    <COMPID name="Deposer" mc="UseCase" uid="612671d3-f61b-449b-b8a9-7d4a61198fc8"/>
+    <COMPID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+    <COMPID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+    <COMPID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+    <COMPID name="Joueur" mc="Actor" uid="35bb20ea-6fba-43f5-b405-e9e69d38c2a7"/>
+    <COMPID name="Ramasser objet" mc="UseCase" uid="fdad8bbd-1914-4599-9557-258a4a8d8fa6"/>
+    <COMPID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+    <COMPID name="Transmettre Message" mc="UseCase" uid="87cdcac8-f5bc-432e-be51-6e9bcf449090"/>
+    <COMPID name="Utiliser des objets" mc="UseCase" uid="c72a396c-e368-4f63-9167-84c8e728f948"/>
+    <COMPID name="diagramme_de_classe_personnage Use Case diagram" mc="UseCaseDiagram" uid="10bd090e-1104-4d9b-a6cd-53a7552920af"/>
+    <COMPID name="overview diagram" mc="ClassDiagram" uid="d944425b-655e-4de2-9dbe-a3d3101d1114"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <PID name="diagramme_de_classe_personnage" mc="Project" uid="db11b87e-e07f-41d6-a997-7f1c357ae788"/>
+    <ATTRIBUTES>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[diagramme_de_classe_personnage]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="OwnedElement">
+        <COMPID name="Joueur" mc="Actor" uid="35bb20ea-6fba-43f5-b405-e9e69d38c2a7"/>
+        <COMPID name="Deposer" mc="UseCase" uid="612671d3-f61b-449b-b8a9-7d4a61198fc8"/>
+        <COMPID name="Utiliser des objets" mc="UseCase" uid="c72a396c-e368-4f63-9167-84c8e728f948"/>
+        <COMPID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+        <COMPID name="Ramasser objet" mc="UseCase" uid="fdad8bbd-1914-4599-9557-258a4a8d8fa6"/>
+        <COMPID name="Attaquer" mc="UseCase" uid="fe52eca7-f310-4f0e-84b9-a9d2dde8e00f"/>
+        <COMPID name="Equiper/déséquiper" mc="UseCase" uid="12dbd721-0928-4460-8dc1-39a4b7fa3d48"/>
+        <COMPID name="Choisir une potion" mc="UseCase" uid="55515e98-94f5-4356-a0f8-0df204681169"/>
+        <COMPID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+        <COMPID name="Créer personnage" mc="UseCase" uid="9a8a5f34-9eb6-470d-b019-82100d8ee725"/>
+        <COMPID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+        <COMPID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+        <COMPID name="Serveur" mc="Actor" uid="fdc09ea6-3b6b-4d7f-ba78-ae4ce7f667af"/>
+        <COMPID name="Transmettre Message" mc="UseCase" uid="87cdcac8-f5bc-432e-be51-6e9bcf449090"/>
+      </COMP>
+      <COMP relation="Product">
+        <COMPID name="overview diagram" mc="ClassDiagram" uid="d944425b-655e-4de2-9dbe-a3d3101d1114"/>
+        <COMPID name="diagramme_de_classe_personnage Use Case diagram" mc="UseCaseDiagram" uid="10bd090e-1104-4d9b-a6cd-53a7552920af"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

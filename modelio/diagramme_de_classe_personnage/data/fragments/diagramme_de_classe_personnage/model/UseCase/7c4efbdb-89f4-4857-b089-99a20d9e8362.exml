@@ -1,0 +1,133 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Déplacer" version="3">
+  <DEPS>
+    <ID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+    <EXTID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+    <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+    <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+    <FOREIGNID name="include" mc="Stereotype" uid="00000000-0000-9c49-0000-000000000000"/>
+    <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+    <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+    <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+    <PID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Déplacer]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Used">
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="UseCaseDependency" uid="d8f59fc1-6e1b-4bba-9c30-913e4e133d2e"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="include" mc="Stereotype" uid="00000000-0000-9c49-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Note" uid="e48a2754-fa82-4d84-b452-503ab9885f3b"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="c75582e1-9521-46c1-9495-4baa389b6355"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="b66245e5-3c20-4ada-ae2d-554e89380467"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="5aeaaabf-07e1-4643-956c-b6cf357e1198"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="e570e30b-c162-4e49-a80f-0d3689a6a5d4"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="531af3d8-c429-4c37-9490-de5f5745ceb0"/>
+          <PID name="Déplacer" mc="UseCase" uid="7c4efbdb-89f4-4857-b089-99a20d9e8362"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

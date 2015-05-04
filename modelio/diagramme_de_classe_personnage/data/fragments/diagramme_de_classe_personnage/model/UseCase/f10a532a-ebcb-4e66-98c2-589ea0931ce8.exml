@@ -1,0 +1,167 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="Connecter au Jeu " version="3">
+  <DEPS>
+    <ID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+    <EXTID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+    <EXTID name="Créer personnage" mc="UseCase" uid="9a8a5f34-9eb6-470d-b019-82100d8ee725"/>
+    <EXTID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+    <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+    <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+    <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+    <FOREIGNID name="extend" mc="Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+    <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+    <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+    <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+    <PID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <ATTRIBUTES>
+      <ATT name="IsElementary">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[Connecter au Jeu ]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="Used">
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="UseCaseDependency" uid="1fa127b4-02dc-4310-aa78-998226962590"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Créer personnage" mc="UseCase" uid="9a8a5f34-9eb6-470d-b019-82100d8ee725"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="UseCaseDependency" uid="1972801f-1c5b-4a3c-ba99-0a8e1296eb8e"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Envoyer Message" mc="UseCase" uid="1c4d9e53-1a68-4515-bc16-9b39011ff3c8"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="UseCaseDependency" mc="UseCaseDependency" uid="17cf2e92-ea30-49ae-a663-a692950eb853"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Name"><![CDATA[UseCaseDependency]]></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Target">
+              <ID name="Connecter a une partie" mc="UseCase" uid="f25495a1-3f84-43cc-9edf-da24db9a8001"/>
+            </LINK>
+            <LINK relation="Extension">
+              <FOREIGNID name="extend" mc="Stereotype" uid="00000000-0000-9c48-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+      <COMP relation="Descriptor">
+        <OBJECT>
+          <ID name="" mc="Note" uid="831f7099-29ae-415d-88f1-f61d8b776b70"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="description" mc="NoteType" uid="00000000-0000-3e81-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="11f1739e-bcf1-4785-8005-70ba2dcd2c2f"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="constraint" mc="NoteType" uid="00bc0b8c-0000-251b-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="3668a5f7-7222-42a2-8ffb-1cfcc96c1b9b"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="non-functional constraint" mc="NoteType" uid="00bc0c08-0000-242c-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="978677bb-9e12-4ee4-8695-f729bd23b8b0"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="exception" mc="NoteType" uid="00bc0b8c-0000-2519-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="f5b6e4f0-1b25-4955-a626-7931e4987687"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="precondition" mc="NoteType" uid="00bc0b8c-0000-2515-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+        <OBJECT>
+          <ID name="" mc="Note" uid="84db373b-c818-4bbb-a9f2-1c2ab4239a71"/>
+          <PID name="Connecter au Jeu " mc="UseCase" uid="f10a532a-ebcb-4e66-98c2-589ea0931ce8"/>
+          <ATTRIBUTES>
+            <ATT name="Content"><![CDATA[...]]></ATT>
+            <ATT name="Name"></ATT>
+            <ATT name="status">1970354901745664</ATT>
+          </ATTRIBUTES>
+          <DEPENDENCIES>
+            <LINK relation="Model">
+              <FOREIGNID name="postcondition" mc="NoteType" uid="00bc0b8c-0000-2517-0000-000000000000"/>
+            </LINK>
+          </DEPENDENCIES>
+        </OBJECT>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

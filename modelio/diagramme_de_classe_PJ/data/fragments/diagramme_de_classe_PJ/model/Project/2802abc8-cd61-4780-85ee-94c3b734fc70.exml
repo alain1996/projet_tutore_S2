@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramme_de_classe_PJ" version="3">
+  <DEPS>
+    <ID name="diagramme_de_classe_PJ" mc="Project" uid="2802abc8-cd61-4780-85ee-94c3b734fc70"/>
+    <COMPID name="diagramme_de_classe_PJ" mc="DiagramSet" uid="855bcb7a-09a3-4113-b00d-d3669e4cf1cc"/>
+    <COMPID name="diagramme_de_classe_pj" mc="Package" uid="6acff3b1-2443-42f3-94de-404ff00a9138"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="diagramme_de_classe_PJ" mc="Project" uid="2802abc8-cd61-4780-85ee-94c3b734fc70"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[diagramme_de_classe_PJ]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DiagramRoot">
+        <COMPID name="diagramme_de_classe_PJ" mc="DiagramSet" uid="855bcb7a-09a3-4113-b00d-d3669e4cf1cc"/>
+      </COMP>
+      <COMP relation="Model">
+        <COMPID name="diagramme_de_classe_pj" mc="Package" uid="6acff3b1-2443-42f3-94de-404ff00a9138"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

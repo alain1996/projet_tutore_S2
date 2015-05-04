@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="LocalProfile" version="3">
+  <DEPS>
+    <ID name="LocalProfile" mc="Profile" uid="e47fa186-fdd3-4ecf-bb79-ef9f5e82a325"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="LocalProfile" mc="Profile" uid="e47fa186-fdd3-4ecf-bb79-ef9f5e82a325"/>
+    <PID name="LocalModule" mc="ModuleComponent" uid="aac38963-99d7-4edf-8b91-1584fde939d5"/>
+    <ATTRIBUTES>
+      <ATT name="JCode"></ATT>
+      <ATT name="IsInstantiable">false</ATT>
+      <ATT name="IsAbstract">false</ATT>
+      <ATT name="IsLeaf">false</ATT>
+      <ATT name="IsRoot">false</ATT>
+      <ATT name="Visibility">Public</ATT>
+      <ATT name="Name"><![CDATA[LocalProfile]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>

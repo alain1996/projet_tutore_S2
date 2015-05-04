@@ -1,0 +1,25 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramme_de_classe_personnage" version="3">
+  <DEPS>
+    <ID name="diagramme_de_classe_personnage" mc="Project" uid="db11b87e-e07f-41d6-a997-7f1c357ae788"/>
+    <COMPID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+    <COMPID name="diagramme_de_classe_personnage" mc="DiagramSet" uid="f46ab073-e25e-41d6-ad5a-5fffaf9f5ef6"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="diagramme_de_classe_personnage" mc="Project" uid="db11b87e-e07f-41d6-a997-7f1c357ae788"/>
+    <ATTRIBUTES>
+      <ATT name="ProjectContext"></ATT>
+      <ATT name="ProjectDescr"></ATT>
+      <ATT name="Name"><![CDATA[diagramme_de_classe_personnage]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES>
+      <COMP relation="DiagramRoot">
+        <COMPID name="diagramme_de_classe_personnage" mc="DiagramSet" uid="f46ab073-e25e-41d6-ad5a-5fffaf9f5ef6"/>
+      </COMP>
+      <COMP relation="Model">
+        <COMPID name="diagramme_de_classe_personnage" mc="Package" uid="e3c4c075-050d-4edd-9228-af50badce045"/>
+      </COMP>
+    </DEPENDENCIES>
+  </OBJECT>
+</EXT>

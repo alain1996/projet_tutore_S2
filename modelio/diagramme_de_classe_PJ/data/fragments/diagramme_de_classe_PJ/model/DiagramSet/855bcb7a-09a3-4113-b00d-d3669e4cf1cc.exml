@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<!--GENERATED FILE, PLEASE DO NOT EDIT!!!--><EXT object="diagramme_de_classe_PJ" version="3">
+  <DEPS>
+    <ID name="diagramme_de_classe_PJ" mc="DiagramSet" uid="855bcb7a-09a3-4113-b00d-d3669e4cf1cc"/>
+  </DEPS>
+  <OBJECT>
+    <ID name="diagramme_de_classe_PJ" mc="DiagramSet" uid="855bcb7a-09a3-4113-b00d-d3669e4cf1cc"/>
+    <PID name="diagramme_de_classe_PJ" mc="Project" uid="2802abc8-cd61-4780-85ee-94c3b734fc70"/>
+    <ATTRIBUTES>
+      <ATT name="Name"><![CDATA[diagramme_de_classe_PJ]]></ATT>
+      <ATT name="status">1970354901745664</ATT>
+    </ATTRIBUTES>
+    <DEPENDENCIES></DEPENDENCIES>
+  </OBJECT>
+</EXT>
