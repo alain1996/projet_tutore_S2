@@ -1,54 +1,59 @@
-package projet_tutore;
-
-
-public class Vetement extends Equipements {
+public class Vetement{
   
-    private int encombrement;
+    private String nom;
+    private int[] encombrement;
+    private int[] solidite;
 
-
-    private int solidite;
-
- // constructeur par défaut 
+//*******************CONSTRUCTEUR PAR DEFAUT************************ 
     
     public Vetement (){
-    	super();
-    	
+        this.nom = "default";
+    	this.encombrement = new encombrement[2];
+    	this.solidite = 0;
     }
     
-   // constructeur champs à champs
+//***************CONSTRUCTEUR CHAMPS A CHAMPS**********************
     
    public Vetement(String nom,int encombrement,int solidite){
-	   super(nom);
+	   this.nom = nom;
 	   this.encombrement =encombrement;
 	   this.solidite=solidite;
    }
+//*********************EQUIPER*************************************
     public void equiper() {
     }
 
-
+//********************DESQUIPER************************************
     public void desequiper () {
     }
 
-// méthode d'accées
-    int getEncombrement() {
+//*******************ACCESSEUR************************************
+    public String getNom(){
+        return this.nom;
+    }
+    
+    
+   public int[] getEncombrement() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.encombrement;
     }
-
-   
-    void setEncombrement(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.encombrement = value;
-    }
-
-
-    int getSolidite() {
+    
+  public  int[] getSolidite() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.solidite;
     }
+//****************MUTATEUR************************************
 
-   
-    void setSolidite(int value) {
+   public void setNom(String nom){
+        this.nom = nom;
+    }
+    
+   public void setEncombrement(int[] value) {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.encombrement = value;
+    }
+    
+   public void setSolidite(int[] value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.solidite = value;
     }

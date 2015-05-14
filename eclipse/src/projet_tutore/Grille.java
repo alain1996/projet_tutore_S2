@@ -1,15 +1,23 @@
 public class Grille {
    
-	// declaration des variables
+	
     private int tailleAbscisse;
     private int tailleOrdonnee;
-    private char[] carte;
+    private String[] carte;
+    
+    public static final int ABSCISSE = 20;
+    public static final int ORDONNEE = 20;
+    
+    public static final int HAUT=1;
+    public static final int BAS =2;
+    public static final int DROITE=3;
+    public static final int GAUCHE=4;
  
     // constructeur par défaut
     public Grille() { 
-    	this.tailleAbscisse = 50;
-    	this.tailleOrdonnee = 20;
-    	this.carte = new char[400];
+    	this.tailleAbscisse = ABSCISSE;
+    	this.tailleOrdonnee = ORDONNEE;
+    	this.carte = new String[400];
     }
    
     // construteur champs à champs
@@ -20,21 +28,21 @@ public class Grille {
     }
     
     public void initGrille() {
-    	this.carte= new char[this.tailleAbscisse*this.tailleOrdonnee];
+    	this.carte= new String[this.tailleAbscisse*this.tailleOrdonnee];
     	for(int i=0;i<this.tailleAbscisse*this.tailleOrdonnee;i++){
-    		this.carte[i]=' ';
+    		this.carte[i]=" ";
     	}
     	for(int i=0;i<this.tailleAbscisse;i++){
-    		this.carte[i]='#';
+    		this.carte[i]="#";
     	}
     	for(int i=(this.tailleOrdonnee-1)*this.tailleAbscisse;i<this.tailleOrdonnee*this.tailleAbscisse;i++){
-    		this.carte[i]='#';
+    		this.carte[i]="#"";
     	}
     	for(int i=0;i<this.tailleOrdonnee*this.tailleAbscisse;i+=this.tailleAbscisse){
-    		this.carte[i]='#';
+    		this.carte[i]="#;
     	}
     	for(int i=this.tailleAbscisse-1;i<this.tailleOrdonnee*this.tailleAbscisse;i+=this.tailleAbscisse){
-    		this.carte[i]='#';
+    		this.carte[i]="#";
     	}
     }
 
@@ -62,49 +70,152 @@ public class Grille {
     	}
     }
 
-    public void modifierCase(int x, int y, char valeur){
+    public void modifierCase(int x, int y, String valeur){
     	if(valeurCase(x,y) != -2){
     		this.carte[x+this.tailleAbscisse*y] = valeur;
     	}
     }
     
-    public void affichage(){
-    	String Newligne=System.getProperty("line.separator");
+    public void genererMurAleatoire(int nombre){
+    	for(int i=0;i<nombre;i++){
+    		this.carte[(int) (Math.random()*this.tailleAbscisse*this.tailleOrdonnee)]='#';
+    	}
+    }
+    
+    public void affichageGrille(){
     	for(int i=0;i<this.tailleOrdonnee;i++){
     		for(int j=0;j<this.tailleAbscisse;j++){
     			System.out.print(this.carte[j+i*this.tailleAbscisse]);
     		}
-    		System.out.print(Newligne);
+    		System.out.print('\n');
     	}
     }
-
-// methode d'acces
+     //*******************SE DEPLACER******************************
     
-    int getTailleAbscisse() {
+    public void seDeplacer(int Direction, Personnage p) {
+                if(Direction ==HAUT){                                                      
+                          if(valeurCase(p.getAbscisse,p.getOrdonnee-1) == 0){ 
+                              p.setOrdonnee=(getOrdonnee-1);        
+                         }
+                }
+                if(Direction ==GAUCHE){                                                     
+                          if(valeurCase(p.getAbscisse-1,p.getOrdonnee) == 0){ 
+                              p.setAbscisse=(getAbscisse-1);        
+                         }
+                  } 
+                if(Direction ==DROITE){                                                     
+                         if(valeurCase(p.getAbscisse+1,p.getOrdonnee) == 0){  
+                              p.setAbscisse=(getAbscisse+1);        
+                         }
+                 }
+                 if(Direction ==BAS){                                                       
+                          if(valeurCase(p.getAbscisse,p.getOrdonnee+1) == 0){ 
+                              p.setOrdonnee=(getOrdonnee+1);        
+                         }
+                 }
+        
+    }
+     //*******************INIT DEPLACER******************************
+    
+    public void initDeplacer(){
+        Personnage personnage;
+        int a=0;
+        do{
+            Scanner sc= new Scanner(System.in);
+            System.out.println("Veuillez Saisir le déplacement");
+            a= sc.nextInt();
+            if(a>0&&a<5){
+                personnage.seDeplacer(a);
+            }
+            else{
+                System.out.println("Erreur saisie n'est pas bon");
+            }
+        }while (a<1||a>4);
+    }
+    public void identificationObjet(int x, int y){
+        String a = valeurCase(x,y);
+        if (a=='#'){
+            system.out.println("Mur");
+        }
+        if (a==" "){
+            system.out.println("Case Vide");
+        }
+        if (a=="S"){
+            system.out.println("Squelette");
+        }
+        if (a=="G"){
+            system.out.println("Gobelin");
+        }
+        if (a=="1"){
+            system.out.println("Joueur 1");
+        }
+        if (a=="2"){
+            system.out.println("Joueur 2");
+        }
+        if (a=="3"){
+            system.out.println("Potion de force");
+        }
+        if (a=="4"){
+            system.out.println("Potion de resistance");
+        }
+        if (a=="5"){
+            system.out.println("Potion d'adresse");
+        }
+        if (a=="6"){
+            system.out.println("Potion de vie");
+        }
+        if (a=="7"){
+            system.out.println("Potion d'action");
+        }
+        if (a=="8"){
+            system.out.println("Vetements en cuir");
+        }
+        if (a=="9"){
+            system.out.println("Vetements en maille");
+        }
+        if (a=="10"){
+            system.out.println("Vetements en fer");
+        }
+        if (a=="11"){
+            system.out.println("Epee en bois");
+        }
+        if (a=="12"){
+            system.out.println("Epee en pierre");
+        }
+        if (a=="13"){
+            system.out.println("Epee en fer");
+        }
+    }
+
+
+
+// mutateurs et accesseurs
+    
+   public  int getTailleAbscisse() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.tailleAbscisse;
     }
 
-    void setTailleAbscisse(int value) {
+   public  void setTailleAbscisse(int value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.tailleAbscisse = value;
     }
 
-    int getTailleOrdonnee() {
+  public   int getTailleOrdonnee() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.tailleOrdonnee;
     }
 
-    void setTailleOrdonnee(int value) {
+   public  void setTailleOrdonnee(int value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.tailleOrdonnee = value;
     }
     
-    char[] getCarte() {
+   public String[] getCarte() {
     	return this.carte;
     }
 
-    void setCarte(char[] value){
+   public  void setCarte(String[] value){
     	this.carte = value;
     }
     

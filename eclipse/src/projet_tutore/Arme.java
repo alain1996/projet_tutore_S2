@@ -1,57 +1,63 @@
-package projet_tutore;
-
-
-public class Arme extends Equipements {
+public class Arme{
 
 	
-	//déclaration des variables
-    private int impact;
-    private int maniabilite;
+	
+	private String nom;
+    private int[] impact;
+    private int[] maniabilite;
     
-    // constructeur par défaut
+//*******************CONSTRUCTEUR PAR DEFAUT**********************
     
     public Arme(){
     	super();
-    	
+    	this.impact = new impact[2];
+    	this.maniabilite= new maniabilite[2];
     }
     
-    //constructeur champs a champs
+//****************CONSTRUCTEUR CHAMPS A CHAMPS******************
     
    public Arme(int impact,int maniabilite,String nom){
 	   super(nom);
 	   this.impact=impact;
 	   this.maniabilite=maniabilite;
    }
-    
+//*********************EQUIPER*************************************
     public void equiper() {
+        
     }
-
+//********************DESQUIPER************************************
     
     public void desequiper() {
+        
     }
-
-    
-    int getImpact() {
+//*******************ACCESSEUR************************************
+    // accesseur et mutateur.
+    public int []getImpact() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.impact;
     }
-
-    
-    void setImpact(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.impact = value;
+    public String getNom(){
+        return this.nom;
     }
-
-
-    int getManiabilite() {
+    public int[] getManiabilite() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.maniabilite;
     }
 
+//****************MUTATEUR************************************
 
-    void setManiabilite(int value) {
+   public  void setImpact(int [] value) {
+        // Automatically generated method. Please delete this comment before entering specific code.
+        this.impact = value;
+    }
+
+    public void setManiabilite(int []value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.maniabilite = value;
+    }
+    
+    public void setNom(String nom){
+        this.nom=nom;
     }
 
 }

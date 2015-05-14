@@ -1,12 +1,9 @@
-package projet_tutore;
-
-
 public class Equipements {
 
     private String nom;
 
     public Equipements(){
-        this.nom = "";
+        this.nom = "default";
     }
 
     public Equipements(String nom){

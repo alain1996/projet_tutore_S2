@@ -1,24 +1,20 @@
-package projet_tutore;
-
-
-public class Potion extends Equipements {
+public class Potion{
   
-    private String caracteristique;
-
-
+    private String nom;
+    private int numeroCaracteristique;
     private int bonus;
 
     // constructeur par défaut 
     public Potion (){
-    		super();
-    		this.caracteristique = "";
+    		this.nom = "";
+    		this.numeroCaracteristique = 0;
     		this.bonus=0;
     }
     // constructeur champs a champs
-    public Potion(String caracteristique,String nom,int bonus){ 
+    public Potion(int numeroCaracteristique,String nom,int bonus){ 
     	
-    	super(nom);
-    	this.caracteristique= caracteristique;
+    	this.nom = nom;
+    	this.numeroCaracteristique = numeroCaracteristique;
     	this.bonus=bonus;
     }
     
@@ -27,27 +23,35 @@ public class Potion extends Equipements {
     }
 
 
-    String getCaracteristique() {
+    public int getnumeroCaracteristique() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.caracteristique;
     }
 
 
-    void setCaracteristique(String value) {
+    public void setNumeroCaracteristique(int value) {
         // Automatically generated method. Please delete this comment before entering specific code.
-        this.caracteristique = value;
+        this.numeroCaracteristique = value;
     }
 
     
-    int getBonus() {
+    public int getBonus() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.bonus;
     }
 
     
-    void setBonus(int value) {
+    public void setBonus(int value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.bonus = value;
+    }
+    
+    public String getNom(){
+        return this.nom;
+    }
+    
+    public void setNom(String nom){
+        this.nom = nom;
     }
 
 }
