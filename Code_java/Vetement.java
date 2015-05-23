@@ -8,13 +8,13 @@ public class Vetement{
     
     public Vetement (){
         this.nom = "default";
-    	this.encombrement = new encombrement[2];
-    	this.solidite = 0;
+    	this.encombrement = new int[2];
+    	this.solidite = new int[2];
     }
     
 //***************CONSTRUCTEUR CHAMPS A CHAMPS**********************
     
-   public Vetement(String nom,int encombrement,int solidite){
+   public Vetement(String nom,int[] encombrement,int[] solidite){
 	   this.nom = nom;
 	   this.encombrement =encombrement;
 	   this.solidite=solidite;

@@ -10,14 +10,14 @@ public class Arme{
     
     public Arme(){
     	super();
-    	this.impact = new impact[2];
-    	this.maniabilite= new maniabilite[2];
+    	this.impact = new int[2];
+    	this.maniabilite= new int[2];
     }
     
 //****************CONSTRUCTEUR CHAMPS A CHAMPS******************
     
-   public Arme(int impact,int maniabilite,String nom){
-	   super(nom);
+   public Arme(int[] impact,int[] maniabilite,String nom){
+	   super();
 	   this.impact=impact;
 	   this.maniabilite=maniabilite;
    }

@@ -1,61 +1,75 @@
-package projet_tutore;
-
 public class Personnage {
 
     public static final int Personnage_constant = 0;
 
-    
+    private String nom;
     private int force;
     private int adresse;
-    private int pointsAction;
-    private String nom;
-    private int pointsExperience;
     private int resistance;
+    private int pointsAction;
+    private int pointsExperience;
+    private int niveauBlessure;
     private int abscisse;
     private int ordonnee;
     private Potion[] inventairePotions;
     private Vetement vetement;
-    private Arme armeDroite;
     private Arme armeGauche;
-    private int niveauBlessure;
+    private Arme armeDroite;
     
      //*******************CONSTRUCTEUR PAR DEFAUT******************************
      
     public Personnage(){
+        this.nom = "default";
         this.force = 0;
         this.adresse = 0;
-        this.pointsAction = 0;
-        this.nom = "default";
-        this.inventairePotions[0] =new Potion();
-       /* for(int i=0;i<this.inventairePotions.length;i++){
-        	this.inventairePotions[i]=new Potion();
-        }*/
-        this.pointsExperience = 0;
         this.resistance = 0;
+        this.pointsAction = 0;
+        this.pointsExperience = 0;
+        this.niveauBlessure = 0;
         this.abscisse = 0;
         this.ordonnee = 0;
+        this.inventairePotions[0] =new Potion();
         this.vetement = new Vetement();
-        this.setArmeGauche(new Arme());
-        this.setArmeDroite(new Arme());
-        this.setNiveauBlessure(0);
+        this.armeGauche = new Arme();
+        this.armeDroite = new Arme();
     }
     
      //*******************CONSTRUCTEUR CHAMPS A CHAMPS******************************
      
-    public Personnage(int force, int adresse, int pointsAction, String nom, Potion[] inventairePotions, Arme armeGauche, Arme armeDroite, Vetement vetement,int niveauBlessure, int pointsExperience, int resistance, int abscisse, int ordonnee){
-        this.force = force;
+    public Personnage(String nom, int force, int adresse, int resistance, int pointsAction, int pointsExperience, int niveauBlessure, int abscisse, int ordonnee, Potion[] inventairePotions, Vetement vetement, Arme armeGauche, Arme armeDroite){
+    	this.nom = nom;
+    	this.force = force;
         this.adresse = adresse;
-        this.pointsAction = pointsAction;
-        this.nom = nom;
-        this.inventairePotions = inventairePotions;
-        this.setArmeGauche(armeGauche);
-        this.setArmeDroite(armeDroite);
-        this.pointsExperience = pointsExperience;
         this.resistance = resistance;
+        this.pointsAction = pointsAction;
+        this.pointsExperience = pointsExperience;
+        this.niveauBlessure = niveauBlessure;
         this.abscisse = abscisse;
         this.ordonnee = ordonnee;
+        this.inventairePotions = inventairePotions;
         this.vetement = vetement;
-        this.setNiveauBlessure(niveauBlessure);
+        this.armeGauche = armeGauche;
+        this.armeDroite = armeDroite;
+
+    }
+    
+    //*******************CONSTRUCTEUR PAR COPIE******************************
+    
+    public Personnage(Personnage p){
+    	this.nom = p.getNom();
+    	this.force = p.force;
+        this.adresse = p.adresse;
+        this.resistance = p.resistance;
+        this.pointsAction = p.pointsAction;
+        this.pointsExperience = p.pointsExperience;
+        this.niveauBlessure = p.niveauBlessure;
+        this.abscisse = p.abscisse;
+        this.ordonnee = p.ordonnee;
+        this.inventairePotions = p.getInventairePotions();
+        this.vetement = p.getVetement();
+        this.armeGauche = p.getArmeGauche();
+        this.armeDroite = p.getArmeDroite();
+
     }
     
     //*******************CALCUL INITIAVE******************************
@@ -122,10 +136,10 @@ public class Personnage {
         System.out.println("Tirage attaque = "+x);
         System.out.println("Tirage esquive = "+y);
         if(y>=x){
-            System.out.println("RatÃ©");
+            System.out.println("Raté");
         }
         else{
-            System.out.println("TouchÃ©");
+            System.out.println("Touché");
             int z = cible.calculDefense();
             int a = calculDegats(armeUtilisee);
             System.out.println("Tirage Defense = "+z);
@@ -136,7 +150,7 @@ public class Personnage {
 						+ (a-z));
             }
             else{
-                System.out.println("Pas blessÃ©");
+                System.out.println("Pas blessé");
             }
         }
     }
@@ -163,7 +177,7 @@ public class Personnage {
     
     public void finirTour() {
     }
-     //*******************TIRAGE ALÃ‰ATOIRE***************************
+     //*******************TIRAGE ALÉATOIRE***************************
     public int tirageAleatoire() {
             return((int) (Math.random()*6+1));
     }
@@ -206,6 +220,14 @@ public class Personnage {
         return this.ordonnee;
     }
     
+    public Potion[] getInventairePotions() {
+    	return this.inventairePotions;
+    }
+    
+    public Vetement getVetement(){
+    	return this.vetement;
+    }
+    
      //*************************MUTATEUR***************************
      
     public void setOrdonnee(int value) {
@@ -234,7 +256,7 @@ public class Personnage {
     }
 
 	public Arme getArmeDroite() {
-		return armeDroite;
+		return this.armeDroite;
 	}
 
 	public void setArmeDroite(Arme armeDroite) {
@@ -242,7 +264,7 @@ public class Personnage {
 	}
 
 	public Arme getArmeGauche() {
-		return armeGauche;
+		return this.armeGauche;
 	}
 
 	public void setArmeGauche(Arme armeGauche) {
@@ -250,11 +272,19 @@ public class Personnage {
 	}
 
 	public int getNiveauBlessure() {
-		return niveauBlessure;
+		return this.niveauBlessure;
 	}
 
 	public void setNiveauBlessure(int niveauBlessure) {
 		this.niveauBlessure = niveauBlessure;
+	}
+	
+	public void setInventairePotions(Potion[] inventairePotions) {
+    	this.inventairePotions = inventairePotions;
+    }
+	
+	public void setVetement(Vetement vetement){
+		this.vetement = vetement;
 	}
 }
 

@@ -1,5 +1,3 @@
-package projet_tutore;
-
 import java.util.Scanner;
 
 public class Grille {
@@ -17,14 +15,14 @@ public class Grille {
     public static final int DROITE=3;
     public static final int GAUCHE=4;
  
-    // constructeur par dÃ©faut
+    // constructeur par défaut
     public Grille() { 
     	this.tailleAbscisse = ABSCISSE;
     	this.tailleOrdonnee = ORDONNEE;
     	this.carte = new String[400];
     }
    
-    // construteur champs Ã  champs
+    // construteur champs à champs
     public Grille(int tailleAbscisse, int tailleOrdonnee, String[] carte){
     	this.tailleAbscisse = tailleAbscisse;
     	this.tailleOrdonnee = tailleOrdonnee;
@@ -70,7 +68,7 @@ public class Grille {
     		return(this.carte[x+this.tailleAbscisse*y]);
     	}
     	else{ 
-    		return("-2");
+    		return("-1");
     	}
     }
 
@@ -94,38 +92,62 @@ public class Grille {
     		System.out.print('\n');
     	}
     }
+    
+    public int[] caseAleatoireVide(){
+    	int[] res=new int[2];
+    	res[1]=-1;
+    	res[0]=-1;
+        while(res[0]<0||res[1]<0||valeurCase(res[0],res[1])!=" "){
+            res[0] = (int) (Math.random()*this.tailleAbscisse);
+            res[1] = (int) (Math.random()*this.tailleOrdonnee);
+        }
+        return res;
+    }
+    
+    public Personnage creerPersonnage(){
+        int[] position = new int[2];
+        position = caseAleatoireVide();
+        Personnage p = new Personnage("Joueur",0,0,0,6,0,0,position[0],position[1],new Potion[0],new Vetement(),new Arme(),new Arme());
+        modifierCase(position[0],position[1],"1");
+        return(p);
+    }
+    
+    
      //*******************SE DEPLACER******************************
     
     public void seDeplacer(int Direction, Personnage p) {
+    			modifierCase(p.getAbscisse(),p.getOrdonnee()," ");
                 if(Direction ==HAUT){                                                      
-                          if(valeurCase(p.getAbscisse(),p.getOrdonnee()-1) == "0"){ 
+                         if(valeurCase(p.getAbscisse(),p.getOrdonnee()-1) == " "){ 
                               p.setOrdonnee(p.getOrdonnee()-1);        
                          }
                 }
                 if(Direction ==GAUCHE){                                                     
-                          if(valeurCase(p.getAbscisse()-1,p.getOrdonnee()) == "0"){ 
+                         if(valeurCase(p.getAbscisse()-1,p.getOrdonnee()) == " "){ 
                               p.setAbscisse(p.getAbscisse()-1);        
                          }
                   } 
                 if(Direction ==DROITE){                                                     
-                         if(valeurCase(p.getAbscisse()+1,p.getOrdonnee()) == "0"){  
+                         if(valeurCase(p.getAbscisse()+1,p.getOrdonnee()) == " "){  
                               p.setAbscisse(p.getAbscisse()+1);        
                          }
                  }
                  if(Direction ==BAS){                                                       
-                          if(valeurCase(p.getAbscisse(),p.getOrdonnee()+1) == "0"){ 
+                         if(valeurCase(p.getAbscisse(),p.getOrdonnee()+1) == " "){ 
                               p.setOrdonnee(p.getOrdonnee()+1);        
                          }
                  }
+                 modifierCase(p.getAbscisse(),p.getOrdonnee(),"1");
         
     }
      //*******************INIT DEPLACER******************************
     
     public void initDeplacer(Personnage personnage){
         int a=0;
+        Scanner sc= new Scanner(System.in);
         do{
-            Scanner sc= new Scanner(System.in);
-            System.out.println("Veuillez Saisir le dÃ©placement");
+            
+            System.out.println("Veuillez Saisir le déplacement");
             a= sc.nextInt();
             if(a>0&&a<5){
               seDeplacer(a,personnage);
@@ -133,8 +155,10 @@ public class Grille {
             else{
                 System.out.println("Erreur saisie n'est pas bon");
             }
-            sc.close();
+            
         }while (a<1||a>4);
+        sc.close();
+        
     }
     
     public void identificationObjet(int x, int y){
