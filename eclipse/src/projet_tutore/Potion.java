@@ -4,7 +4,7 @@ public class Potion{
     private int numeroCaracteristique;
     private int bonus;
 
-    // constructeur par dÃ©faut 
+    // constructeur par défaut 
     public Potion (){
     		this.nom = "";
     		this.numeroCaracteristique = 0;
@@ -25,7 +25,7 @@ public class Potion{
 
     public int getnumeroCaracteristique() {
         // Automatically generated method. Please delete this comment before entering specific code.
-        return this.caracteristique;
+        return this.numeroCaracteristique;
     }
 
 

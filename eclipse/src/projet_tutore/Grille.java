@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class Grille {
    
 	
@@ -5,23 +7,23 @@ public class Grille {
     private int tailleOrdonnee;
     private String[] carte;
     
-    public static final int ABSCISSE = 20;
-    public static final int ORDONNEE = 20;
+    public static final int ABSCISSE = 30;
+    public static final int ORDONNEE = 30;
     
     public static final int HAUT=1;
     public static final int BAS =2;
     public static final int DROITE=3;
     public static final int GAUCHE=4;
  
-    // constructeur par dÃ©faut
+    // constructeur par défaut
     public Grille() { 
     	this.tailleAbscisse = ABSCISSE;
     	this.tailleOrdonnee = ORDONNEE;
-    	this.carte = new String[400];
+    	this.carte = new String[ABSCISSE*ORDONNEE];
     }
    
-    // construteur champs Ã  champs
-    public Grille(int tailleAbscisse, int tailleOrdonnee, char[] carte){
+    // construteur champs à champs
+    public Grille(int tailleAbscisse, int tailleOrdonnee, String[] carte){
     	this.tailleAbscisse = tailleAbscisse;
     	this.tailleOrdonnee = tailleOrdonnee;
     	this.carte = carte;
@@ -36,10 +38,10 @@ public class Grille {
     		this.carte[i]="#";
     	}
     	for(int i=(this.tailleOrdonnee-1)*this.tailleAbscisse;i<this.tailleOrdonnee*this.tailleAbscisse;i++){
-    		this.carte[i]="#"";
+    		this.carte[i]="#";
     	}
     	for(int i=0;i<this.tailleOrdonnee*this.tailleAbscisse;i+=this.tailleAbscisse){
-    		this.carte[i]="#;
+    		this.carte[i]="#";
     	}
     	for(int i=this.tailleAbscisse-1;i<this.tailleOrdonnee*this.tailleAbscisse;i+=this.tailleAbscisse){
     		this.carte[i]="#";
@@ -57,133 +59,274 @@ public class Grille {
 
     public void ajoutMur(int x, int y){
     	if(caseValide(x,y)){
-    		this.carte[x+y*this.tailleAbscisse]='#';
+    		this.carte[x+y*this.tailleAbscisse]="#";
     	}
     }
     
-    public int valeurCase(int x, int y){
+    public String valeurCase(int x, int y){
     	if(caseValide(x,y)){
     		return(this.carte[x+this.tailleAbscisse*y]);
     	}
     	else{ 
-    		return(-2);
+    		return("-1");
     	}
     }
 
     public void modifierCase(int x, int y, String valeur){
-    	if(valeurCase(x,y) != -2){
+    	if(valeurCase(x,y) != "-1"){
     		this.carte[x+this.tailleAbscisse*y] = valeur;
     	}
     }
     
     public void genererMurAleatoire(int nombre){
     	for(int i=0;i<nombre;i++){
-    		this.carte[(int) (Math.random()*this.tailleAbscisse*this.tailleOrdonnee)]='#';
+    		this.carte[(int) (Math.random()*this.tailleAbscisse*this.tailleOrdonnee)]="#";
     	}
     }
     
+    public Personnage apparaitreMonstre(){
+    	int x;
+    	int a,b,c;
+    	int[] d = new int[2];
+    	int[] y = new int[2];
+   		x = (int)(Math.random()*2);
+    	y = caseAleatoireVide();
+    	d[0] = 1;
+		d[1] = 2;
+		String nom = new String();
+		String symbole = new String();
+    	if(x==0){    	    		
+    		a =(int)(Math.random()*4+4);
+       		b =(int)(Math.random()*4+3);
+       		c =(int)(Math.random()*4);
+   	    	nom = "Squelette";
+   	    	symbole = "S";
+    	}
+    	else{
+    		a =(int)(Math.random()*4+2);
+   	    	b =(int)(Math.random()*4+1);
+   	   		c =(int)(Math.random()*4+4);
+   	   		nom = "Gobelin";
+   	   		symbole = "G";
+    	}
+    	Personnage p = new Personnage(nom,a,b,c,0,0,0,y[0],y[1],new Potion[0],new Vetement(),new Arme("Epee en bois",d,d),new Arme());	
+		modifierCase(y[0],y[1],symbole);    	
+    	return(p);
+    }
+    
+    public void apparaitreObjetAleatoire(int nombre){            // Fait apparaitre un objet ou pas
+    	int x;
+    	String z;
+    	int y=0;
+    	for(int i=0;i<nombre;i++){
+    		x =(int)(Math.random()*11);
+    		z = convertirObjet(x);
+    		y = (int) (Math.random()*this.tailleAbscisse*this.tailleOrdonnee);
+    		if (carte[y]==" "){
+    			this.carte[y]=z;
+    		}
+    	}
+    }
+    
+    public String convertirObjet(int valeur){
+    	if(valeur==0){
+    		return("3");
+    	}
+    	if(valeur==1){
+    		return("4");
+    	}
+    	if(valeur==2){
+    		return("5");
+    	}
+    	if(valeur==3){
+    		return("6");
+    	}
+    	if(valeur==4){
+    		return("7");
+    	}
+    	if(valeur==5){
+    		return("8");
+    	}
+    	if(valeur==6){
+    		return("9");
+    	}
+    	if(valeur==7){
+    		return("10");
+    	}
+    	if(valeur==8){
+    		return("11");
+    	}
+    	if(valeur==9){
+    		return("12");
+    	}
+    	if(valeur==10){
+    		return("13");
+    	}
+    	return null;
+    	
+    }
+    
     public void affichageGrille(){
-    	for(int i=0;i<this.tailleOrdonnee;i++){
-    		for(int j=0;j<this.tailleAbscisse;j++){
-    			System.out.print(this.carte[j+i*this.tailleAbscisse]);
+    	for(int i=0;i<this.tailleAbscisse;i++){
+    		for(int j=0;j<this.tailleOrdonnee;j++){
+    			if(valeurCase(i,j)=="3"||valeurCase(i,j)=="4"||valeurCase(i,j)=="5"||valeurCase(i,j)=="6"||valeurCase(i,j)=="7"){
+    				System.out.print("p");
+    			}
+    			else if(valeurCase(i,j)=="8"||valeurCase(i,j)=="9"||valeurCase(i,j)=="10"){
+    				System.out.print("v");
+    			}
+    			else if(valeurCase(i,j)=="11"||valeurCase(i,j)=="12"||valeurCase(i,j)=="13"){
+    				System.out.print("a");
+    			}
+    			else{
+    				System.out.print(valeurCase(i,j));
+    			}
     		}
     		System.out.print('\n');
     	}
     }
+    
+    public int[] caseAleatoireVide(){
+    	int[] res=new int[2];
+    	res[1]=-1;
+    	res[0]=-1;
+        while(res[0]<0||res[1]<0||valeurCase(res[0],res[1])!=" "){
+            res[0] = (int) (Math.random()*this.tailleAbscisse);
+            res[1] = (int) (Math.random()*this.tailleOrdonnee);
+        }
+        return res;
+    }
+    
+    public Personnage creerPersonnage(){
+        int[] position = new int[2];
+        position = caseAleatoireVide();
+        Personnage p = new Personnage("Joueur",0,0,0,6,0,0,position[0],position[1],new Potion[0],new Vetement(),new Arme(),new Arme());
+        modifierCase(position[0],position[1],"1");
+        return(p);
+    }
+    
+    
      //*******************SE DEPLACER******************************
     
-    public void seDeplacer(int Direction, Personnage p) {
-                if(Direction ==HAUT){                                                      
-                          if(valeurCase(p.getAbscisse,p.getOrdonnee-1) == 0){ 
-                              p.setOrdonnee=(getOrdonnee-1);        
+    public boolean seDeplacer(int Direction, Personnage p) {
+                if(Direction ==GAUCHE){                                                      
+                         if(valeurCase(p.getAbscisse(),p.getOrdonnee()-1) == " "){ 
+                        	 modifierCase(p.getAbscisse(),p.getOrdonnee()," ");
+                             p.setOrdonnee(p.getOrdonnee()-1);      
                          }
+                         else{
+                        	 return(false);
+                         }
+                         
                 }
-                if(Direction ==GAUCHE){                                                     
-                          if(valeurCase(p.getAbscisse-1,p.getOrdonnee) == 0){ 
-                              p.setAbscisse=(getAbscisse-1);        
+                if(Direction ==HAUT){                                                     
+                         if(valeurCase(p.getAbscisse()-1,p.getOrdonnee()) == " "){ 
+                        	 modifierCase(p.getAbscisse(),p.getOrdonnee()," ");
+                             p.setAbscisse(p.getAbscisse()-1);                          
+                         }
+                         else{
+                        	 return(false);
                          }
                   } 
-                if(Direction ==DROITE){                                                     
-                         if(valeurCase(p.getAbscisse+1,p.getOrdonnee) == 0){  
-                              p.setAbscisse=(getAbscisse+1);        
+                if(Direction ==BAS){                                                     
+                         if(valeurCase(p.getAbscisse()+1,p.getOrdonnee()) == " "){  
+                        	 modifierCase(p.getAbscisse(),p.getOrdonnee()," ");
+                        	 p.setAbscisse(p.getAbscisse()+1);                             
+                         }
+                         else{
+                        	 return(false);
                          }
                  }
-                 if(Direction ==BAS){                                                       
-                          if(valeurCase(p.getAbscisse,p.getOrdonnee+1) == 0){ 
-                              p.setOrdonnee=(getOrdonnee+1);        
+                 if(Direction ==DROITE){                                                       
+                         if(valeurCase(p.getAbscisse(),p.getOrdonnee()+1) == " "){ 
+                        	 modifierCase(p.getAbscisse(),p.getOrdonnee()," ");
+                        	 p.setOrdonnee(p.getOrdonnee()+1);                              
+                         }
+                         else{
+                        	 return(false);
                          }
                  }
-        
+                 modifierCase(p.getAbscisse(),p.getOrdonnee(),"1");
+                 return(true);
     }
      //*******************INIT DEPLACER******************************
     
-    public void initDeplacer(){
-        Personnage personnage;
-        int a=0;
+    public void initDeplacer(Personnage personnage){
+        int a,i=0;
+        boolean q;
+        Scanner sc= new Scanner(System.in);
         do{
-            Scanner sc= new Scanner(System.in);
-            System.out.println("Veuillez Saisir le dÃ©placement");
-            a= sc.nextInt();
-            if(a>0&&a<5){
-                personnage.seDeplacer(a);
-            }
-            else{
-                System.out.println("Erreur saisie n'est pas bon");
-            }
-        }while (a<1||a>4);
+        	do{
+        		System.out.println("Veuillez Saisir le déplacement");
+        		a= sc.nextInt();
+        		if(a>0&&a<5){
+        			q=seDeplacer(a,personnage);
+        			if(q){
+        				i++;
+        			}
+        		}
+        		else{
+        			System.out.println("Erreur saisie n'est pas bon");
+        		}
+        	}while (a<1||a>4);
+        	affichageGrille();
+        }while(i<5);
+        sc.close();
+        
     }
+    
     public void identificationObjet(int x, int y){
         String a = valeurCase(x,y);
-        if (a=='#'){
-            system.out.println("Mur");
+        if (a=="#"){
+            System.out.println("Mur");
         }
         if (a==" "){
-            system.out.println("Case Vide");
+            System.out.println("Case Vide");
         }
         if (a=="S"){
-            system.out.println("Squelette");
+            System.out.println("Squelette");
         }
         if (a=="G"){
-            system.out.println("Gobelin");
+            System.out.println("Gobelin");
         }
         if (a=="1"){
-            system.out.println("Joueur 1");
+            System.out.println("Joueur 1");
         }
         if (a=="2"){
-            system.out.println("Joueur 2");
+            System.out.println("Joueur 2");
         }
         if (a=="3"){
-            system.out.println("Potion de force");
+            System.out.println("Potion de force");
         }
         if (a=="4"){
-            system.out.println("Potion de resistance");
+            System.out.println("Potion de resistance");
         }
         if (a=="5"){
-            system.out.println("Potion d'adresse");
+            System.out.println("Potion d'adresse");
         }
         if (a=="6"){
-            system.out.println("Potion de vie");
+            System.out.println("Potion de vie");
         }
         if (a=="7"){
-            system.out.println("Potion d'action");
+            System.out.println("Potion d'action");
         }
         if (a=="8"){
-            system.out.println("Vetements en cuir");
+            System.out.println("Vetements en cuir");
         }
         if (a=="9"){
-            system.out.println("Vetements en maille");
+            System.out.println("Vetements en maille");
         }
         if (a=="10"){
-            system.out.println("Vetements en fer");
+            System.out.println("Vetements en fer");
         }
         if (a=="11"){
-            system.out.println("Epee en bois");
+            System.out.println("Epee en bois");
         }
         if (a=="12"){
-            system.out.println("Epee en pierre");
+            System.out.println("Epee en pierre");
         }
         if (a=="13"){
-            system.out.println("Epee en fer");
+            System.out.println("Epee en fer");
         }
     }
 

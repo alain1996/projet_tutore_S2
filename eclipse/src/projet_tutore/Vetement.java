@@ -1,20 +1,20 @@
 public class Vetement{
   
     private String nom;
-    private int[] encombrement;
+    private int encombrement;
     private int[] solidite;
 
 //*******************CONSTRUCTEUR PAR DEFAUT************************ 
     
     public Vetement (){
         this.nom = "default";
-    	this.encombrement = new encombrement[2];
-    	this.solidite = 0;
+    	this.encombrement = 0;
+    	this.solidite = new int[2];
     }
     
 //***************CONSTRUCTEUR CHAMPS A CHAMPS**********************
     
-   public Vetement(String nom,int encombrement,int solidite){
+   public Vetement(String nom,int encombrement,int[] solidite){
 	   this.nom = nom;
 	   this.encombrement =encombrement;
 	   this.solidite=solidite;
@@ -33,7 +33,7 @@ public class Vetement{
     }
     
     
-   public int[] getEncombrement() {
+   public int getEncombrement() {
         // Automatically generated method. Please delete this comment before entering specific code.
         return this.encombrement;
     }
@@ -48,7 +48,7 @@ public class Vetement{
         this.nom = nom;
     }
     
-   public void setEncombrement(int[] value) {
+   public void setEncombrement(int value) {
         // Automatically generated method. Please delete this comment before entering specific code.
         this.encombrement = value;
     }
