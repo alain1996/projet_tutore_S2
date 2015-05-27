@@ -7,22 +7,22 @@ public class Grille {
     private int tailleOrdonnee;
     private String[] carte;
     
-    public static final int ABSCISSE = 30;
-    public static final int ORDONNEE = 30;
+    public static final int ABSCISSE = 20;
+    public static final int ORDONNEE = 20;
     
     public static final int HAUT=1;
     public static final int BAS =2;
     public static final int DROITE=3;
     public static final int GAUCHE=4;
  
-    // constructeur par d�faut
+    // constructeur par dÈfaut
     public Grille() { 
     	this.tailleAbscisse = ABSCISSE;
     	this.tailleOrdonnee = ORDONNEE;
     	this.carte = new String[ABSCISSE*ORDONNEE];
     }
    
-    // construteur champs � champs
+    // construteur champs ‡ champs
     public Grille(int tailleAbscisse, int tailleOrdonnee, String[] carte){
     	this.tailleAbscisse = tailleAbscisse;
     	this.tailleOrdonnee = tailleOrdonnee;
@@ -167,6 +167,7 @@ public class Grille {
     }
     
     public void affichageGrille(){
+    	
     	for(int i=0;i<this.tailleAbscisse;i++){
     		for(int j=0;j<this.tailleOrdonnee;j++){
     			if(valeurCase(i,j)=="3"||valeurCase(i,j)=="4"||valeurCase(i,j)=="5"||valeurCase(i,j)=="6"||valeurCase(i,j)=="7"){
@@ -184,6 +185,20 @@ public class Grille {
     		}
     		System.out.print('\n');
     	}
+    	
+    }
+    public void affichageCaracteristique(){
+    	Grille g=new Grille();
+    	g.initGrille();
+        Personnage p1= new Personnage(g.creerPersonnage());
+        System.out.println("Vos caractéristique");
+        System.out.println("Force: "+p1.getForce());
+        System.out.println("Adresse: "+p1.getAdresse());
+		System.out.println("Resistance: "+p1.getResistance());
+		System.out.println("Point D'action: "+p1.getPointsAction());
+		System.out.println("Points D'expérience: "+p1.getPointsExperience());
+		System.out.println("Niveau de Blessure: "+p1.getNiveauBlessure());
+        
     }
     
     public int[] caseAleatoireVide(){
@@ -255,13 +270,24 @@ public class Grille {
         int a,i=0;
         boolean q;
         Scanner sc= new Scanner(System.in);
+       // for (int j = 0; j < 10; j++) System.out.println();
         do{
+        	System.out.println("\n");
+        	affichageCaracteristique();
+        	System.out.println("\n");
         	do{
-        		System.out.println("Veuillez Saisir le d�placement");
+        		
+        		System.out.println("Veuillez Saisir le deplacement:");
+        		System.out.println("1-Haut");
+        		System.out.println("2-Bas");
+        		System.out.println("3-Droite");
+        		System.out.println("4-Gauche");
         		a= sc.nextInt();
+        		for (int j = 0; j < 30; j++) System.out.println();
         		if(a>0&&a<5){
         			q=seDeplacer(a,personnage);
         			if(q){
+        				
         				i++;
         			}
         		}
@@ -329,8 +355,83 @@ public class Grille {
             System.out.println("Epee en fer");
         }
     }
-
-
+  public void Menu(){
+	  int a=0;
+	  Grille g= new Grille();
+	  System.out.println("		-----------------");
+	  System.out.println("		|EHPTMMMORPGSVR |");
+	  System.out.println("		-----------------");
+	  System.out.println("-----------------------------------------");
+	  System.out.println(" 		Que voulez-vous:");
+	  System.out.println("-----------------------------------------");
+	  System.out.println("1-Commencer une partie");
+	  System.out.println("2-Créer un personnage avec des équipement");
+	  System.out.println("3-Quitter le Jeu");
+	  System.out.println("-----------------------------------------");
+	  Scanner sc= new Scanner(System.in);
+	  a= sc.nextInt();
+	  for (int i = 0; i < 30; ++i) System.out.println();
+	  
+		  if(a==1){
+					commencerPartie(a);
+		  }
+		  else if(a==2){
+			  g.initGrille();
+			  g.genererMurAleatoire(105);
+			  Personnage p1= new Personnage(g.creerPersonnage());
+			 // p1.toString();
+			  // probleme dans le constructeur par defaut, ligne 33 de la classe personnage
+			  System.out.println("Votre pesonnage est creer");
+			  g.apparaitreMonstre();
+			  g.apparaitreObjetAleatoire(10);
+			  g.affichageGrille();
+			  g.initDeplacer(p1);
+		  }
+		  else if(a==3){
+			  System.out.println("Vous avez quitter le jeu");
+		  }
+		  else if(a!=1 ||a!=2||a!=3){
+			  System.out.println("--------------------------------------------");
+			  System.out.println("Le numéro que vous avez saisie n'ets pas bon");
+			  System.out.println("--------------------------------------------");
+			  System.out.println("Que voulez-vous:");
+			  System.out.println("1-Commencer une partie");
+			  System.out.println("2-Créer un personnage avec des équipment");
+			  System.out.println("3-Quitter le Jeu");
+			  System.out.println("--------------------------");
+			  Scanner sca= new Scanner(System.in);
+			  a= sca.nextInt();
+			  for (int i = 0; i < 30; ++i) System.out.println();
+			  			if (a==1){
+			  						commencerPartie(a);
+			  			}
+			  			else if(a==2){ 
+			  				System.out.println("Votre pesonnage est creer");
+			  				 commencerPartie(a);
+			  			}
+			  			sca.close();
+		  } 
+		
+	  sc.close();
+  }
+  public void commencerPartie(int nombre){
+	  Grille g= new Grille();
+	 
+	  if(nombre==1 ||nombre==2){
+		
+			  	g.initGrille();
+			  	g.genererMurAleatoire(105);
+				Personnage p1 = new Personnage(g.creerPersonnage());
+				g.apparaitreMonstre();
+				g.apparaitreObjetAleatoire(10);
+				g.affichageGrille();
+				g.initDeplacer(p1);
+				//p1.attaquer(g.apparaitreMonstre(), new Arme());
+	  }
+	  
+  }
+  
+	      
 
 // mutateurs et accesseurs
     
@@ -361,5 +462,5 @@ public class Grille {
    public  void setCarte(String[] value){
     	this.carte = value;
     }
-    
+   
 }

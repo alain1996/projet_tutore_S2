@@ -4,7 +4,7 @@ public class Potion{
     private int numeroCaracteristique;
     private int bonus;
 
-    // constructeur par défaut 
+    // constructeur par dÃˆfaut 
     public Potion (){
     		this.nom = "";
     		this.numeroCaracteristique = 0;

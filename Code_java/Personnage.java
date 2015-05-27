@@ -16,6 +16,8 @@ public class Personnage {
     private Arme armeGauche;
     private Arme armeDroite;
     
+    
+    
      //*******************CONSTRUCTEUR PAR DEFAUT******************************
      
     public Personnage(){
@@ -131,21 +133,20 @@ public class Personnage {
         System.out.println("Tirage attaque = "+x);
         System.out.println("Tirage esquive = "+y);
         if(y>=x){
-            System.out.println("Raté");
+            System.out.println("RatÃˆ");
         }
         else{
-            System.out.println("Touché");
+            System.out.println("TouchÃˆ");
             int z = cible.calculDefense();
             int a = calculDegats(armeUtilisee);
             System.out.println("Tirage Defense = "+z);
             System.out.println("Tirage Degats = "+a);
             if(z<a){
                 System.out.println("Blessure : +"+(a-z));
-                cible.setNiveauBlessure(cible.getNiveauBlessure()
-						+ (a-z));
+                cible.setNiveauBlessure(cible.getNiveauBlessure()+ (a-z));
             }
             else{
-                System.out.println("Pas blessé");
+                System.out.println("Pas blessÃˆ");
             }
         }
     }
@@ -172,7 +173,7 @@ public class Personnage {
     
     public void finirTour() {
     }
-     //*******************TIRAGE ALÉATOIRE***************************
+     //*******************TIRAGE ALâ€¦ATOIRE***************************
     public int tirageAleatoire() {
             return((int) (Math.random()*6+1));
     }
@@ -281,5 +282,10 @@ public class Personnage {
 	public void setVetement(Vetement vetement){
 		this.vetement = vetement;
 	}
+	public String toString(){
+    	return "nom"+this.nom+"force:"+this.force+"adresse"+this.adresse+"resistance"+this.resistance+"point d'action"+this.pointsAction+
+    			"points d'expÃ©rience:"+this.pointsExperience+"niveau blessure"+this.niveauBlessure+"abscisse"+this.abscisse+"ordonne"+this.ordonnee+
+    			"inventaire Potion"+this.inventairePotions+"vetement"+this.vetement+"arme Gauche"+this.armeGauche+"arme Droite"+this.armeDroite; 
+    }
 }
 
