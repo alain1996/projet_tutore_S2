@@ -29,6 +29,9 @@ public class Personnage {
         this.abscisse = 0;
         this.ordonnee = 0;
         this.inventairePotions[0] =new Potion();
+        for(int i=0;i<this.inventairePotions.length;i++){
+        	this.inventairePotions[i]=new Potion();
+        }
         this.vetement = new Vetement();
         this.armeGauche = new Arme();
         this.armeDroite = new Arme();
@@ -74,22 +77,18 @@ public class Personnage {
     
     //*******************CALCUL INITIAVE******************************
 
-    public int calculInitiave() {
-        int x = this.adresse-this.vetement.getEncombrement()[2];
-        int y=0;
-        for(int i=0;i<this.vetement.getEncombrement()[1];i++){
-            y+=tirageAleatoire();
-        }
-        return (x+y);
+    public int calculInitiative() {
+        int x = this.adresse-this.vetement.getEncombrement();
+        return (x);
     }
     
     //*******************CALCUL ATTAQUE********************************
 
     public int calculAttaque(Arme armeUtilisee) {
-        int x = this.adresse+armeUtilisee.getManiabilite()[2];
+        int x = this.adresse+armeUtilisee.getManiabilite()[1];
         
                   int y=0;
-                  for(int i=0;i<armeUtilisee.getManiabilite()[1];i++){
+                  for(int i=0;i<armeUtilisee.getManiabilite()[0];i++){
                      y+=tirageAleatoire();
         }
         return (x+y);
@@ -98,20 +97,16 @@ public class Personnage {
     //*******************CALCUL ESQUIVE******************************
     
     public int calculEsquive() {
-        int x = this.adresse-this.vetement.getEncombrement()[2];
-        int y=0;
-        for(int i=0;i<this.vetement.getEncombrement()[1];i++){
-            y+=tirageAleatoire();
-        }
-        return (x+y);
+        int x = this.adresse-this.vetement.getEncombrement();
+        return (x);
     }
     
     //*******************CALCUL DEFENSE*******************************
     
     public int calculDefense() {
-        int x = this.resistance+this.vetement.getSolidite()[2];
+        int x = this.resistance+this.vetement.getSolidite()[1];
         int y = 0;
-        for(int i=0;i<this.vetement.getSolidite()[1];i++){
+        for(int i=0;i<this.vetement.getSolidite()[0];i++){
             y+=tirageAleatoire();
         }
         return (x+y);
@@ -120,9 +115,9 @@ public class Personnage {
     //*******************CALCUL DEGATS******************************
     
     public int calculDegats(Arme armeUtilisee) {
-        int x = this.force+armeUtilisee.getImpact()[2];
+        int x = this.force+armeUtilisee.getImpact()[1];
         int y = 0;
-        for(int i=0;i<armeUtilisee.getImpact()[1];i++){
+        for(int i=0;i<armeUtilisee.getImpact()[0];i++){
             y+=tirageAleatoire();
         }
         return (x+y);

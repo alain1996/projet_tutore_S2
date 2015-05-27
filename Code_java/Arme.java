@@ -16,7 +16,7 @@ public class Arme{
     
 //****************CONSTRUCTEUR CHAMPS A CHAMPS******************
     
-   public Arme(int[] impact,int[] maniabilite,String nom){
+   public Arme(String nom,int[] impact,int[] maniabilite){
 	   super();
 	   this.impact=impact;
 	   this.maniabilite=maniabilite;
