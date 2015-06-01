@@ -1,6 +1,6 @@
-public class Arme{
 
-	
+
+public class Arme {
 	
 	private String nom;
     private int[] impact;
@@ -31,28 +31,24 @@ public class Arme{
         
     }
 //*******************ACCESSEUR************************************
-    // accesseur et mutateur.
+   
     public int []getImpact() {
-        // Automatically generated method. Please delete this comment before entering specific code.
         return this.impact;
     }
     public String getNom(){
         return this.nom;
     }
     public int[] getManiabilite() {
-        // Automatically generated method. Please delete this comment before entering specific code.
         return this.maniabilite;
     }
 
-//****************MUTATEUR************************************
+//****************MUTATEUR****************************************
 
    public  void setImpact(int [] value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
         this.impact = value;
     }
 
     public void setManiabilite(int []value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
         this.maniabilite = value;
     }
     

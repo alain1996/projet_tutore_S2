@@ -1,4 +1,4 @@
-public class Personnage {
+public class Personnage{
 
     public static final int Personnage_constant = 0;
 
@@ -16,7 +16,9 @@ public class Personnage {
     private Arme armeGauche;
     private Arme armeDroite;
     
-     //*******************CONSTRUCTEUR PAR DEFAUT******************************
+    
+    
+     //*******************CONSTRUCTEUR PAR DEFAUT***************************************
      
     public Personnage(){
         this.nom = "default";
@@ -37,7 +39,7 @@ public class Personnage {
         this.armeDroite = new Arme();
     }
     
-     //*******************CONSTRUCTEUR CHAMPS A CHAMPS******************************
+     //*******************CONSTRUCTEUR CHAMPS A CHAMPS**********************************
      
     public Personnage(String nom, int force, int adresse, int resistance, int pointsAction, int pointsExperience, int niveauBlessure, int abscisse, int ordonnee, Potion[] inventairePotions, Vetement vetement, Arme armeGauche, Arme armeDroite){
     	this.nom = nom;
@@ -56,7 +58,7 @@ public class Personnage {
 
     }
     
-    //*******************CONSTRUCTEUR PAR COPIE******************************
+    //*******************CONSTRUCTEUR PAR COPIE*****************************************
     
     public Personnage(Personnage p){
     	this.nom = p.getNom();
@@ -75,14 +77,14 @@ public class Personnage {
 
     }
     
-    //*******************CALCUL INITIAVE******************************
+    //*******************CALCUL INITIAVE************************************************
 
     public int calculInitiative() {
         int x = this.adresse-this.vetement.getEncombrement();
         return (x);
     }
     
-    //*******************CALCUL ATTAQUE********************************
+    //*******************CALCUL ATTAQUE**************************************************
 
     public int calculAttaque(Arme armeUtilisee) {
         int x = this.adresse+armeUtilisee.getManiabilite()[1];
@@ -94,14 +96,14 @@ public class Personnage {
         return (x+y);
     }
     
-    //*******************CALCUL ESQUIVE******************************
+    //*******************CALCUL ESQUIVE***************************************************
     
     public int calculEsquive() {
         int x = this.adresse-this.vetement.getEncombrement();
         return (x);
     }
     
-    //*******************CALCUL DEFENSE*******************************
+    //*******************CALCUL DEFENSE****************************************************
     
     public int calculDefense() {
         int x = this.resistance+this.vetement.getSolidite()[1];
@@ -112,7 +114,7 @@ public class Personnage {
         return (x+y);
     }
     
-    //*******************CALCUL DEGATS******************************
+    //*******************CALCUL DEGATS******************************************************
     
     public int calculDegats(Arme armeUtilisee) {
         int x = this.force+armeUtilisee.getImpact()[1];
@@ -123,7 +125,7 @@ public class Personnage {
         return (x+y);
     }
     
-    //*******************ATTAQUER******************************
+    //*******************ATTAQUER***********************************************************
     
     public void attaquer(Personnage cible, Arme armeUtilisee) {
         int x = calculAttaque(armeUtilisee);
@@ -131,21 +133,20 @@ public class Personnage {
         System.out.println("Tirage attaque = "+x);
         System.out.println("Tirage esquive = "+y);
         if(y>=x){
-            System.out.println("Raté");
+            System.out.println("RatÃˆ");
         }
         else{
-            System.out.println("Touché");
+            System.out.println("TouchÃˆ");
             int z = cible.calculDefense();
             int a = calculDegats(armeUtilisee);
             System.out.println("Tirage Defense = "+z);
             System.out.println("Tirage Degats = "+a);
             if(z<a){
                 System.out.println("Blessure : +"+(a-z));
-                cible.setNiveauBlessure(cible.getNiveauBlessure()
-						+ (a-z));
+                cible.setNiveauBlessure(cible.getNiveauBlessure()+ (a-z));
             }
             else{
-                System.out.println("Pas blessé");
+                System.out.println("Pas blessÃˆ");
             }
         }
     }
@@ -153,36 +154,36 @@ public class Personnage {
    
     
    
-    //*******************UTILISER POTION*****************************
+    //*******************UTILISER POTION***********************************************
     
     public void utiliserPotion(Potion potion){
         potion.utiliser();
     }
     
-    //*******************DEPOSER OBJET*******************************
+    //*******************DEPOSER OBJET*************************************************
     
     public void deposerObjet(){
     }
     
-    //*******************RAMASSER OBJET******************************
+    //*******************RAMASSER OBJET************************************************
     
     public void ramasserObjet(){
     }
-    //*******************FINIR TOUR**********************************
+    //*******************FINIR TOUR****************************************************
     
     public void finirTour() {
     }
-     //*******************TIRAGE ALÉATOIRE***************************
+     //*******************TIRAGE ALâ€¦ATOIRE*********************************************
     public int tirageAleatoire() {
             return((int) (Math.random()*6+1));
     }
     
-    //*******************PERDRE OBJETS******************************
+    //*******************PERDRE OBJETS************************************************
     
     public void perdreObjets() {
     }
 
-    //*************************ACCESSEUR****************************
+    //*************************ACCESSEUR**********************************************
     
    public  int getForce() {
         return this.force;
@@ -222,8 +223,18 @@ public class Personnage {
     public Vetement getVetement(){
     	return this.vetement;
     }
+    public int getNiveauBlessure() {
+		return this.niveauBlessure;
+	}
+    public Arme getArmeDroite() {
+		return this.armeDroite;
+	}
+    public Arme getArmeGauche() {
+		return this.armeGauche;
+	}
+
     
-     //*************************MUTATEUR***************************
+//*************************MUTATEUR*********************************************
      
     public void setOrdonnee(int value) {
         this.ordonnee = value;
@@ -249,27 +260,12 @@ public class Personnage {
     public void setAdresse(int value) {
         this.adresse = value;
     }
-
-	public Arme getArmeDroite() {
-		return this.armeDroite;
-	}
-
 	public void setArmeDroite(Arme armeDroite) {
 		this.armeDroite = armeDroite;
 	}
-
-	public Arme getArmeGauche() {
-		return this.armeGauche;
-	}
-
 	public void setArmeGauche(Arme armeGauche) {
 		this.armeGauche = armeGauche;
 	}
-
-	public int getNiveauBlessure() {
-		return this.niveauBlessure;
-	}
-
 	public void setNiveauBlessure(int niveauBlessure) {
 		this.niveauBlessure = niveauBlessure;
 	}
@@ -281,5 +277,11 @@ public class Personnage {
 	public void setVetement(Vetement vetement){
 		this.vetement = vetement;
 	}
+	//************************TO STRING*************************************************
+	public String toString(){
+    	return "nom"+this.nom+"force:"+this.force+"adresse"+this.adresse+"resistance"+this.resistance+"point d'action"+this.pointsAction+
+    			"points d'expÃ©rience:"+this.pointsExperience+"niveau blessure"+this.niveauBlessure+"abscisse"+this.abscisse+"ordonne"+this.ordonnee+
+    			"inventaire Potion"+this.inventairePotions+"vetement"+this.vetement+"arme Gauche"+this.armeGauche+"arme Droite"+this.armeDroite; 
+    }
 }
 

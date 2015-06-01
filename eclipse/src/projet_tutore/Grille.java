@@ -7,27 +7,30 @@ public class Grille {
     private int tailleOrdonnee;
     private String[] carte;
     
-    public static final int ABSCISSE = 30;
-    public static final int ORDONNEE = 30;
+    public static final int ABSCISSE = 20;
+    public static final int ORDONNEE = 20;
     
     public static final int HAUT=1;
     public static final int BAS =2;
     public static final int DROITE=3;
     public static final int GAUCHE=4;
  
-    // constructeur par défaut
+//**************************CONSTRUCTEUR PAR DEFAUT*********************************************************  
     public Grille() { 
     	this.tailleAbscisse = ABSCISSE;
     	this.tailleOrdonnee = ORDONNEE;
     	this.carte = new String[ABSCISSE*ORDONNEE];
     }
    
-    // construteur champs à champs
+//**************************CONSTRUCTEUR CHAMPS A CHAMPS****************************************************
+    
     public Grille(int tailleAbscisse, int tailleOrdonnee, String[] carte){
     	this.tailleAbscisse = tailleAbscisse;
     	this.tailleOrdonnee = tailleOrdonnee;
     	this.carte = carte;
     }
+    
+//**************************INIT GRILLE*******************************************************************    
     
     public void initGrille() {
     	this.carte= new String[this.tailleAbscisse*this.tailleOrdonnee];
@@ -48,6 +51,8 @@ public class Grille {
     	}
     }
 
+//**************************CASE VALIDE*********************************************************  
+    
     public boolean caseValide(int x, int y){
     	if(x>=0 && x<this.tailleAbscisse && y>=0 && y<this.tailleOrdonnee){
     		return(true);
@@ -57,12 +62,14 @@ public class Grille {
     	}
     }
 
+//**************************AJOUTE MUR*********************************************************  
+    
     public void ajoutMur(int x, int y){
     	if(caseValide(x,y)){
     		this.carte[x+y*this.tailleAbscisse]="#";
     	}
     }
-    
+//**************************VALEUR CASE*********************************************************  
     public String valeurCase(int x, int y){
     	if(caseValide(x,y)){
     		return(this.carte[x+this.tailleAbscisse*y]);
@@ -72,17 +79,23 @@ public class Grille {
     	}
     }
 
+//**************************MODIFIER CASE*********************************************************  
+    
     public void modifierCase(int x, int y, String valeur){
     	if(valeurCase(x,y) != "-1"){
     		this.carte[x+this.tailleAbscisse*y] = valeur;
     	}
     }
-    
+  
+//**************************GENERATEUR MUR ALEATOIRE***********************************************    
+
     public void genererMurAleatoire(int nombre){
     	for(int i=0;i<nombre;i++){
     		this.carte[(int) (Math.random()*this.tailleAbscisse*this.tailleOrdonnee)]="#";
     	}
     }
+    
+//**************************APPARAITRE MONSTRE***********************************************
     
     public Personnage apparaitreMonstre(){
     	int x;
@@ -114,7 +127,9 @@ public class Grille {
     	return(p);
     }
     
-    public void apparaitreObjetAleatoire(int nombre){            // Fait apparaitre un objet ou pas
+//******************************APPARAITRE OBJET ALEATOIRE***********************************
+    
+    public void apparaitreObjetAleatoire(int nombre){           
     	int x;
     	String z;
     	int y=0;
@@ -127,6 +142,8 @@ public class Grille {
     		}
     	}
     }
+    
+//**************************CONVERTIR OBJET**************************************************
     
     public String convertirObjet(int valeur){
     	if(valeur==0){
@@ -166,6 +183,8 @@ public class Grille {
     	
     }
     
+//***********************AFFICHAGE GRILLE*********************************************
+    
     public void affichageGrille(){
     	for(int i=0;i<this.tailleAbscisse;i++){
     		for(int j=0;j<this.tailleOrdonnee;j++){
@@ -184,7 +203,26 @@ public class Grille {
     		}
     		System.out.print('\n');
     	}
+    	
     }
+    
+//***************************AFFICHAGE CARACTERISTIQUE*******************************
+    
+    public void affichageCaracteristique(){
+    	Grille g=new Grille();
+    	g.initGrille();
+        Personnage p1= new Personnage(g.creerPersonnage());
+        System.out.println("Vos caractÃ©ristique");
+        System.out.println("Force: "+p1.getForce());
+        System.out.println("Adresse: "+p1.getAdresse());
+		System.out.println("Resistance: "+p1.getResistance());
+		System.out.println("Point D'action: "+p1.getPointsAction());
+		System.out.println("Points D'expÃ©rience: "+p1.getPointsExperience());
+		System.out.println("Niveau de Blessure: "+p1.getNiveauBlessure());
+        
+    }
+    
+//****************************CASE ALEATOIRE***************************************
     
     public int[] caseAleatoireVide(){
     	int[] res=new int[2];
@@ -196,6 +234,8 @@ public class Grille {
         }
         return res;
     }
+
+//*******************************CREER PERSONNAGE**********************************
     
     public Personnage creerPersonnage(){
         int[] position = new int[2];
@@ -205,8 +245,7 @@ public class Grille {
         return(p);
     }
     
-    
-     //*******************SE DEPLACER******************************
+//****************************SE DEPLACER*****************************************
     
     public boolean seDeplacer(int Direction, Personnage p) {
                 if(Direction ==GAUCHE){                                                      
@@ -249,19 +288,31 @@ public class Grille {
                  modifierCase(p.getAbscisse(),p.getOrdonnee(),"1");
                  return(true);
     }
-     //*******************INIT DEPLACER******************************
+  
+//*******************INIT DEPLACER******************************************
     
     public void initDeplacer(Personnage personnage){
         int a,i=0;
         boolean q;
         Scanner sc= new Scanner(System.in);
+       
         do{
+        	System.out.println("\n");
+        	affichageCaracteristique();
+        	System.out.println("\n");
         	do{
-        		System.out.println("Veuillez Saisir le déplacement");
+        		
+        		System.out.println("Veuillez Saisir le deplacement:");
+        		System.out.println("1-Haut");
+        		System.out.println("2-Bas");
+        		System.out.println("3-Droite");
+        		System.out.println("4-Gauche");
         		a= sc.nextInt();
+        		
         		if(a>0&&a<5){
         			q=seDeplacer(a,personnage);
         			if(q){
+        
         				i++;
         			}
         		}
@@ -271,10 +322,10 @@ public class Grille {
         	}while (a<1||a>4);
         	affichageGrille();
         }while(i<5);
-        sc.close();
+      
         
     }
-    
+ //**************************IDENFICATIONOBJET******************************
     public void identificationObjet(int x, int y){
         String a = valeurCase(x,y);
         if (a=="#"){
@@ -329,37 +380,34 @@ public class Grille {
             System.out.println("Epee en fer");
         }
     }
-
-
-
-// mutateurs et accesseurs
+    
+//*************************MUTATEUR******************************
     
    public  int getTailleAbscisse() {
-        // Automatically generated method. Please delete this comment before entering specific code.
+       
         return this.tailleAbscisse;
     }
-
-   public  void setTailleAbscisse(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.tailleAbscisse = value;
-    }
-
   public   int getTailleOrdonnee() {
-        // Automatically generated method. Please delete this comment before entering specific code.
+        
         return this.tailleOrdonnee;
     }
-
+  public String[] getCarte() {
+  	return this.carte;
+  }
+  
+//*************************MUTATEUR******************************
+  
    public  void setTailleOrdonnee(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
+        
         this.tailleOrdonnee = value;
     }
-    
-   public String[] getCarte() {
-    	return this.carte;
-    }
-
    public  void setCarte(String[] value){
     	this.carte = value;
     }
-    
+   public  void setTailleAbscisse(int value) {
+        
+        this.tailleAbscisse = value;
+    }
+
+   
 }

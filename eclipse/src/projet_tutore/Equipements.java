@@ -10,11 +10,11 @@ public class Equipements {
         this.equipement=new ArrayList<Object>();
     }
 
-// constructeur champs a champs
+//********************CONSTRUCTEUR PAR DEFAUT*************************
     public Equipements( ArrayList<Object> equipement){
         this.equipement=equipement;
     }
-
+//********************CHOISIR OBJET***********************************
     public void choisirObjet() {
     	int a=0;
     	Scanner sc= new Scanner(System.in);
@@ -36,7 +36,7 @@ public class Equipements {
         }
         sc.close();
     }
-    
+//**********************CHOISIR ARME******************************************
     public void choisirArme(){
         System.out.println("Veuillez saisir l'objet que vous voulez\n");
             for(int i=0;i<this.equipement.size();i++){
@@ -45,6 +45,7 @@ public class Equipements {
             }
             // afficher tout les elements du tableau qui on type de arme
     }
+  //**********************CHOISIR POTION******************************************
     public void choisirPotion(){
         System.out.println("Veuillez saisir l'objet que vous voulez\n");
             for(int i=0;i<this.equipement.size();i++){
@@ -53,6 +54,7 @@ public class Equipements {
             }
             // afficher tout les elements du tableau qui on type de arme
     }
+//**********************CHOISIR VETEMENT******************************************
     public void choisirVetement(){
         System.out.println("Veuillez saisir l'objet que vous voulez\n");
             for(int i=0;i<this.equipement.size();i++){
@@ -62,11 +64,11 @@ public class Equipements {
             // afficher tout les elements du tableau qui on type de arme
     }
 
-
+  //**********************ACCESSEUR******************************************
     public ArrayList<Object> getequipement() {
         return this.equipement;
     }
-
+  //**********************MUTATEUR******************************************
     public void setequipement(ArrayList<Object> equipement) {
         this.equipement = equipement;
     }

@@ -1,17 +1,20 @@
+
 public class Potion{
   
     private String nom;
     private int numeroCaracteristique;
     private int bonus;
 
-    // constructeur par dÈfaut 
+//***************************CONSTRUCTEUR PAR DEFAUT******************************
     public Potion (){
     		this.nom = "";
     		this.numeroCaracteristique = 0;
     		this.bonus=0;
     }
-    // constructeur champs a champs
-    public Potion(int numeroCaracteristique,String nom,int bonus){ 
+
+//***************************CONSTRUCTEUR CHAMPS A CHAMPS*************************
+    
+    public Potion(String nom,int numeroCaracteristique,int bonus){ 
     	
     	this.nom = nom;
     	this.numeroCaracteristique = numeroCaracteristique;
@@ -22,32 +25,25 @@ public class Potion{
     public void utiliser() {
     }
 
-
-    public int getnumeroCaracteristique() {
-        // Automatically generated method. Please delete this comment before entering specific code.
+//************************ACCESSEUR************************************************
+    public int getnumeroCaracteristique() {	
         return this.numeroCaracteristique;
     }
-
-
-    public void setNumeroCaracteristique(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.numeroCaracteristique = value;
-    }
-
-    
     public int getBonus() {
-        // Automatically generated method. Please delete this comment before entering specific code.
         return this.bonus;
     }
-
-    
-    public void setBonus(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
-        this.bonus = value;
-    }
-    
     public String getNom(){
         return this.nom;
+    }
+
+ //*********************MUTATEUR***************************************************
+   
+    public void setNumeroCaracteristique(int value) {
+        this.numeroCaracteristique = value;
+    }
+    
+    public void setBonus(int value) {
+        this.bonus = value;
     }
     
     public void setNom(String nom){

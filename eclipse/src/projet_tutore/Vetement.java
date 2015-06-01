@@ -1,3 +1,4 @@
+
 public class Vetement{
   
     private String nom;
@@ -34,12 +35,10 @@ public class Vetement{
     
     
    public int getEncombrement() {
-        // Automatically generated method. Please delete this comment before entering specific code.
         return this.encombrement;
     }
     
   public  int[] getSolidite() {
-        // Automatically generated method. Please delete this comment before entering specific code.
         return this.solidite;
     }
 //****************MUTATEUR************************************
@@ -49,12 +48,10 @@ public class Vetement{
     }
     
    public void setEncombrement(int value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
         this.encombrement = value;
     }
     
    public void setSolidite(int[] value) {
-        // Automatically generated method. Please delete this comment before entering specific code.
         this.solidite = value;
     }
 
