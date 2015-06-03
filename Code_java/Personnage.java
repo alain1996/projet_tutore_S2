@@ -169,10 +169,7 @@ public class Personnage{
     
     public void ramasserObjet(){
     }
-    //*******************FINIR TOUR****************************************************
     
-    public void finirTour() {
-    }
      //*******************TIRAGE AL…ATOIRE*********************************************
     public int tirageAleatoire() {
             return((int) (Math.random()*6+1));

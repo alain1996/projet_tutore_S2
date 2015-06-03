@@ -1,10 +1,11 @@
 
 import java.util.Scanner;
 
-
-
 public class Menu {
 
+//*******************************CONSTRUCTEUR PAR DEFAUT**************************
+	public Menu(){
+	}
 //**********************************DEMARRER**************************************
 	public void demarrer(){
 		  int a=0;
@@ -48,8 +49,8 @@ public class Menu {
 		  Scanner sc= new Scanner(System.in);
 				  	g.initGrille();
 					Personnage p = new Personnage(g.creerPersonnage());
-					while(i<15){
-						System.out.println("\nAttribuer les caractÈristiques : \nReste "+(15-i)+" points ‡ attribuer\n\n1- Force : "+p.getForce()+"\n2- Adresse : "+p.getAdresse()+"\n3- Resistance "+p.getResistance());
+				while(i<15){
+						System.out.println("\nAttribuer les caractÈristiques : \nReste "+(15-i)+" points a attribuer\n\n1- Force : "+p.getForce()+"\n2- Adresse : "+p.getAdresse()+"\n3- Resistance "+p.getResistance());
 						a = sc.nextInt();
 						if(a>0&&a<4){
 							if(a==1){
@@ -85,25 +86,42 @@ public class Menu {
 					g.affichageGrille();
 					jouer(g,p);	
 	  }
+	  
+//*************************JOUER*******************************
+	  
 public void jouer(Grille g, Personnage p){
 	int a=0;
+	
+	Scanner sc= new Scanner(System.in);
 		  while(a!=5){
 			a=0;
-			
+		
 			while(a<1||a>6){
-				Scanner sc= new Scanner(System.in);
-				System.out.println("\nAction :\n\n1- Se Deplacer\n2- Attaquer\n3- Objets\n4- Ramasser\n5- Finir Tour\n6-Quitter le jeu");
+				g.affichageCaracteristique(p);
+				System.out.println("\nAction :\n\n1- Se Deplacer\n2- Attaquer\n3- Déposer\n4- Ramasser\n5- Finir Tour\n6- Quitter le jeu");
 				a=sc.nextInt();
 				if(a==1){
-					g.initDeplacer(p);
+					if(p.getPointsAction()>2){
+						g.initDeplacer(p);
+						p.setPointsAction((p.getPointsAction())-3);
+					}
+					else{
+						System.out.println("\nPas assez de Points d'action\n");
+					}	
 				}
-				else if(a==2){
+				if(a==2){
 					p.attaquer(g.apparaitreMonstre(), new Arme());
+					System.out.println("\n");
 				}
-				else if(a==6){
-					System.out.println("Vous avez quittez le jeu");
 				}
+			if(a==6){
+				System.out.println(" Vous avez quitter le jeu");
+				break;
 			}
-		  }
+			
+			}
+		  
+		  sc.close();
 		}
+
 }

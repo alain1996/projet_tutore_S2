@@ -55,6 +55,10 @@ public class Arme {
     public void setNom(String nom){
         this.nom=nom;
     }
+ //*******************TO STRING**********************************
+    public String toString(){
+       	return "le nom"+this.nom+"impact:"+this.impact+"maniabilite"+this.maniabilite;
+       }
 
 }
 

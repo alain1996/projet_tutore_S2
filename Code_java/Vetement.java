@@ -4,6 +4,7 @@ public class Vetement{
     private String nom;
     private int encombrement;
     private int[] solidite;
+    
 
 //*******************CONSTRUCTEUR PAR DEFAUT************************ 
     
@@ -54,6 +55,10 @@ public class Vetement{
    public void setSolidite(int[] value) {
         this.solidite = value;
     }
+   //********************TO STRING******************************
+   public String toString(){
+      	return "le nom"+this.nom+"encombrement"+this.encombrement+"solidite"+this.solidite;
+      }
 
 }
 	

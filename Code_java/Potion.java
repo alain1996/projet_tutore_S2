@@ -4,6 +4,8 @@ public class Potion{
     private String nom;
     private int numeroCaracteristique;
     private int bonus;
+    
+  
 
 //***************************CONSTRUCTEUR PAR DEFAUT******************************
     public Potion (){
@@ -49,5 +51,9 @@ public class Potion{
     public void setNom(String nom){
         this.nom = nom;
     }
+   //*******************TOSTRING****************************************************
+    public String toString(){
+       	return "le nom"+this.nom+"numero Carateristique"+this.numeroCaracteristique+"bonus"+this.bonus;
+       }
 
 }
